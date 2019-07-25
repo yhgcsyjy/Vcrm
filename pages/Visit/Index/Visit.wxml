@@ -1,0 +1,12 @@
+<!--pages/Customer.wxml-->
+<import src="../../../Component/VisitComponent/VisitComponent"/>
+<view >
+  <SearchBox id="SearchBox" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear">
+    </SearchBox>
+    </view>
+<view>
+  <block wx:for="{{visitList}}" wx:key='{{item}}'>
+    <template is="VisitComponent" data="{{...item}}"></template>
+  </block>
+</view>
+   

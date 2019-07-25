@@ -1,0 +1,24 @@
+<template name="Template">
+  <navigator url='../CustomerDetail/CustomerDetail?CustomerId={{customerId}}' class='customerItem-bg' style='display: flex;flex-direction: column; align-items:left; margin:10px;padding:5px;background-color: white;border-bottom: 1px solid aliceblue;'>
+    <view class='customerItem-text'>
+      <view class='customerItem-text-l' style='border-right:0px solid #D9D9D9;padding-right:10px'>
+        <text>{{customer_Name}}</text> 
+        <view style='font-size:14px;'>
+        <text>{{liaison_Man_Name}}</text>
+        <text style='padding-left:5px'>{{liaison_Man_Call}}</text>
+        <text style='padding-left:5px'>{{office_Telephone}}</text>
+        
+        </view>
+        <view>
+          <text style='border: 1px solid #1AAD00;padding:2px 10px;color:#1AAD00;font-size:14px'>{{state}}</text>
+           <text style='padding-left:5px;font-size:14px;'>{{customer_Address}}</text>
+        </view>
+      </view>
+      <view class='customerItem-text-r'>
+        <text style='border: 1px solid #FF7033;padding:2px 10px;color:#FF7033;font-size:14px;margin-left:1px;'>{{sales_Team}}</text>
+        <text style='padding-left:15px; color:red;font-size:14px'>{{sales}}</text>
+         <text style='padding-left:15px; color:red;font-size:14px'>{{createDT}}</text>
+      </view>
+    </view>
+  </navigator>
+</template>

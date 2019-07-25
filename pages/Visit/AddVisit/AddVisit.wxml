@@ -1,0 +1,110 @@
+<!--pages/Visit/AddVisit/AddVisit.wxml-->
+<form bindsubmit="saveClick" bindreset="formReset">
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+<view  class="weui-cells__title">
+拜访详情
+</view>
+<view>
+<view  class="weui-cells weui-cells_after-title">
+<view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">拜访主题</view>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input weui-input_font_right" data-name='Visit_Objective' bindinput="visInput" value='{{visitEntity.Visit_Objective}}'/>
+                </view>
+            </view>
+          <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">客户名称</view>
+                </view>
+                <view class="weui-cell__bd">
+                  <picker bindchange="customerChange" data-name='Customer_Name' value="{{visitEntity.Customer_Name}}" range="{{customerList}}" range-key="customer_Name">
+                  <view class="weui-select weui-select_in-select-after">{{visitEntity.Customer_Name}}</view>
+                   </picker>
+                     <!--
+                  <input class="weui-input weui-input_font_right" value='{{visitEntity.Customer_Name}}'/>
+                  </picker>
+                 <input data-name='Customer_Name' bindinput="visInput" class="weui-input weui-input_font_right" value='{{visitEntity.Customer_Name}}'/>
+                 --> 
+                </view>
+            </view>
+<view class="weui-cell weui-cell_input">
+ <view class="weui-cell__hd">
+                    <view class="weui-label">客户编号</view>
+                </view>
+                <view class="weui-cell__bd">
+                  <input data-name='Customer_Code' bindinput="visInput" class="weui-input weui-input_font_right" disabled value='{{visitEntity.Customer_Code}}'/>
+                </view>
+            </view>
+<view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">客户地址</view>
+                </view>
+                <view class="weui-cell__bd">
+                  <input data-name='Customer_Address' bindinput="visInput" class="weui-input weui-input_font_right" disabled value='{{visitEntity.Customer_Address}}'/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">计划拜访时间</view>
+                </view>
+                <view class="weui-cell__bd">
+                  <picker data-name="Planning_Time" value='{{visitEntity.Actual_Time}}' mode="date"  start="1970-01-01" end="2999-12-31" bindchange="bindDateChange">
+                        <view class="weui-input weui-input_font_right">{{visitEntity.Planning_Time}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">实际拜访时间</view>
+                </view>
+                <view class="weui-cell__bd">
+                 <picker mode="date" data-name='Actual_Time' value='{{visitEntity.Actual_Time}}' start="1970-01-01" end="2999-12-31" bindchange="bindDateChange">
+                        <view class="weui-input weui-input_font_right">{{visitEntity.Actual_Time}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">同行人</view>
+                </view>
+                <view class="weui-cell__bd">
+                  <input data-name='Peer_Personnel' bindinput="visInput" class="weui-input weui-input_font_right" value='{{visitEntity.Peer_Personnel}}'/>
+                </view>
+            </view>
+                  <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">交通工具</view>
+                </view>
+                <view class="weui-cell__bd">
+                 <picker data-name='Vehicle' bindchange="vehicleChange" value="{{visitEntity.Vehicle}}" range="{{vehicleList}}" >
+                                <view class="weui-select weui-input weui-input_font_right">{{visitEntity.Vehicle}}</view>
+                  <!--<input class="weui-input weui-input_font_right" value='{{visitEntity.Vehicle}}'/>-->
+                 </picker>
+                </view>
+            </view>
+               <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">拜访地点</view>
+                </view>
+                <view class="weui-cell__bd">
+      <input data-name='Visit_Address' bindinput="visInput" class="weui-input weui-input_font_right" value='{{visitEntity.Visit_Address}}'/>
+                </view>
+            </view>
+              <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">备注</view>
+                </view>
+                <view class="weui-cell__bd">
+      <input data-name='Remark' bindinput="visInput" class="weui-input weui-input_font_right" value='{{visitEntity.Remark}}'/>
+                </view>
+            </view>
+            </view>
+</view>
+</view>
+<view class="btn-area">
+    <button form-type="submit" type="primary" size="defaultSize" over-class="other-button-hover">保存</button>
+    <button form-type="reset">重置/新增</button>
+</view>
+</form>

@@ -1,0 +1,16 @@
+/* Component/VisitComponent.wxss */
+.customerItem-text {
+  display: flex;
+  flex-direction: row;
+  width: 100%; 
+  margin: 10px;
+  background-color: white;
+  font-family:'Courier New', Courier, monospace;
+  size: 9px;
+}
+.customerItem-text-l {
+  width: 80%;
+}
+.customerItem-text-r {
+  margin: auto;
+}

@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/userInfo/userInfo",
+    "pages/Clue/Clue",
+    "pages/BusinessOpportunity/BusinessOpportunity",
+    "pages/Contract/Contract",
+    "pages/Visit/Index/Visit",
+    "pages/StayDo/StayDo",
+    "pages/DataView/DataView",
+    "pages/Customer/Index/Customer",
+    "pages/Customer/ClientHighSeas/ClientHighSeas",
+    "pages/Customer/CustomerDetail/CustomerDetail",
+    "pages/Customer/AddCustomer/AddCustomer",
+    "pages/Visit/Detail/VisitDetail",
+    "pages/Visit/AddVisit/AddVisit"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "CRM",
+        "iconPath": "image/icon_nav_article.png",
+        "selectedIconPath": "image/icon_nav_article.png"
+      },
+      {
+        "pagePath": "pages/DataView/DataView",
+        "text": "数据看板",
+        "iconPath": "image/icon_nav_tab.png",
+        "selectedIconPath": "image/icon_nav_tab.png"
+      },
+      {
+        "pagePath": "pages/StayDo/StayDo",
+        "text": "待办",
+        "iconPath": "image/icon_nav_cell.png",
+        "selectedIconPath": "image/icon_nav_cell.png"
+      },
+      {
+        "pagePath": "pages/userInfo/userInfo",
+        "text": "我的",
+        "iconPath": "image/icon_nav_panel.png",
+        "selectedIconPath": "image/icon_nav_panel.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

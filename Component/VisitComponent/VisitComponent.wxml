@@ -1,0 +1,22 @@
+<!--Component/VisitComponent.wxml-->
+<template name="VisitComponent">
+  <navigator url='../Detail/VisitDetail?visitId={{visitId}}' class='customerItem-bg' style='display: flex;flex-direction: column; align-items:left; margin:10px;padding:5px;background-color: white;border-bottom: 1px solid aliceblue;'>
+    <view class='customerItem-text'>
+      <view class='customerItem-text-l' style='border-right:0px solid #D9D9D9;padding-right:10px'>
+        <text class="customerItem-text">{{visit_Objective}}</text> 
+        <view style='font-size:14px;'>
+        <text>{{actual_Time}}</text>
+         <text style='padding-left:5px'>{{peer_Personnel}}</text>
+         <text style='padding-left:5px'>{{vehicle}}</text>
+        </view>
+        <view>
+          <text style='border: 1px solid #1AAD00;padding:2px 10px;color:#1AAD00;font-size:14px'>{{customer_Name}}</text>
+           <text style='padding-left:10px;font-size:14px;'>{{customer_Code}}</text>
+        </view>
+      </view>
+      <view class='customerItem-text-r'>
+         <text style='padding-left:0px; color:red;font-size:14px'>{{customer_Address}}             </text>
+      </view>
+    </view>
+  </navigator>
+</template>
