@@ -16,7 +16,7 @@ Page({
     show: false,//控制下拉列表的显示隐藏，false隐藏、true显示
     index: 0,//选择的下拉列表下标
     visitList: [],
-    addflag: false,  //判断是否显示搜索框右侧部分
+    addflag: true,  //判断是否显示搜索框右侧部分
     addimg: '/image/activity_add.png',
     searchstr: '',
     pagelist:0,

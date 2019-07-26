@@ -3,8 +3,13 @@ import {
 } from '../config.js';
 
 function Get(params) {
+  if (!config.serverToken || config.serverToken == '') {
+    return new Promise((resolve, reject) => {
+      _show_error(1014)
+    })
+  }
+  config.header["Authorization"] = "Bearer " + config.serverToken;
   var promise = new Promise((resolve, reject) => {
-    config.header["Authorization"] ="Bearer "+config.serverToken;
     wx.request({
       url: config.api_base_url + params.url,
       method: 'GET',
@@ -31,6 +36,12 @@ function Get(params) {
   return promise;
 }
 function Post(params) {
+  if (!config.serverToken || config.serverToken == '') {
+    return new Promise((resolve, reject) => {
+      _show_error(1014)
+    })
+  }
+  config.header["Authorization"] = "Bearer " + config.serverToken;
   var promise = new Promise((resolve, reject) => {
     wx.request({
       url: config.api_base_url + params.url,
@@ -56,6 +67,12 @@ function Post(params) {
   return promise;
 }
 function JsonPost(params) {
+  if (!config.serverToken || config.serverToken == '') {
+    return new Promise((resolve, reject) => {
+      _show_error(1014)
+    })
+  }
+  config.header["Authorization"] = "Bearer " + config.serverToken;
   var promise = new Promise((resolve, reject) => {
     wx.request({
       url: config.api_base_url + params.url,

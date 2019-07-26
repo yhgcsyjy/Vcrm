@@ -8,9 +8,10 @@ Page({
     motto: 'CRM客户关系管理系统',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    canIUse: wx.qy.canIUse('button.open-type.getEnterpriseUserInfo'),
     isUser: "userInfo",
     UserName: "tesdee",
+    headimageUrl:'',
   },
   //事件处理函数
   bindViewTap: function () {
@@ -48,7 +49,7 @@ Page({
       }
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
+      wx.qy.getEnterpriseUserInfo({
         success: res => {
           app.globalData.userInfo = res.userInfo
           this.setData({
@@ -58,6 +59,21 @@ Page({
         }
       })
     }
+    wx.qy.getAvatar({
+      success :e=>{
+        this.setData({
+          headimageUrl: e.avatar,
+        });
+      },
+      fail: function (res) {
+        console.log(res.fail_reason)
+        wx.showToast({
+          title: '获取头像失败',
+          icon:'none',
+          duration:3000
+        })
+      }
+    })
   },
   getUserInfo: function (e) {
     console.log(e)

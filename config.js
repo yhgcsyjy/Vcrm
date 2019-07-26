@@ -1,6 +1,6 @@
 const config = {
-  //api_base_url: 'https://crmtest.mcpsystem.com/',
-  api_base_url:"https://localhost:44340/",
+  api_base_url: 'https://crmtest.mcpsystem.com/',
+  //api_base_url:"https://localhost:44340/",
   tips: {
     1001: '对不起!找不到该用户,请联系管理员',
     1002: 'appkey无效',
@@ -15,7 +15,9 @@ const config = {
     1011: '请求无效',
     1012: '参数校验失败',
     1013: '请求授权失败',
-    1014: '请求服务器失败'
+    1014: '请求服务器失败',
+    1015: '登录失败,服务器无应答',
+    1016: '不支持微信登录,请使用企业微信登录'
   },
   header: {
    // 'content-type': 'application/x-www-form-urlencoded',

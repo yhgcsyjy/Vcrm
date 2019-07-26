@@ -18,25 +18,25 @@ Page({
    // console.log(getApp().globalData.serverUrl);   获取全局配置
     var listService = [
       {
-        title: 'CRM',
+        title: 'VCRM',
         items: [{
           name: '线索',
           url: '/pages/Clue/Clue',
-          icon: '/image/icon_nav_article.png',
+          icon: '/image/deployment.png',
           code: '11'
         },
         {
           isBind: true,
-          name: '客户公海',
+          name: '公海客户',
           url: '/pages/Customer/ClientHighSeas/ClientHighSeas',
-          icon: '/image/icon_nav_actionSheet.png',
+          icon: '/image/piechart.png',
           code: '11'
         },
         {
             isBind: true,
-            name: '客户',
-          url: '/pages/Customer/Index/Customer',
-          icon: '/image/avatar.png',
+            name: '我的客户',
+           url: '/pages/Customer/Index/Customer',
+           icon: '/image/avatar.png',
             code: '11'
           },
           {
@@ -51,7 +51,7 @@ Page({
             isBind: true,
             name: '拜访',
             url: '/pages/Visit/Index/Visit',
-            icon: '/image/icon_nav_panel.png',
+            icon: '/image/visit.png',
             code: '11'
           }
           ,
@@ -59,21 +59,21 @@ Page({
             isBind: true,
             name: '合同',
             url: '/pages/Contract/Contract',
-            icon: '/image/icon_nav_button.png',
+            icon: '/image/Contract.png',
             code: '11'
           },
           {
             isBind: true,
             name: '联系人',
             url: '/pages/Contract/Contract',
-            icon: '/image/icon_nav_button.png',
+            icon: '/image/LinkMan.png',
             code: '11'
           },
           {
             isBind: true,
             name: '黑名单',
             url: '/pages/Contract/Contract',
-            icon: '/image/icon_nav_button.png',
+            icon: '/image/blackList.png',
             code: '11'
           }
         ]
