@@ -1,0 +1,116 @@
+<!--pages/LinkMan/Detail/Detail.wxml-->
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+<view  class="weui-cells__title">
+联系人详情
+</view>
+<view>
+<view  class="weui-cells weui-cells_after-title">
+<view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">姓名</view>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input weui-input_font_right" value='{{liaison_ManEntity.liaison_Man_Name}}' disabled/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">称呼</view>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input weui-input_font_right" value='{{liaison_ManEntity.liaison_Man_Call}}' disabled/>
+                </view>
+            </view>
+          <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">客户编号</view>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input weui-input_font_right" value='{{liaison_ManEntity.customer_Code}}' disabled/>
+                </view>
+            </view>
+<view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">客户名称</view>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input weui-input_font_right" value='{{liaison_ManEntity.customer_Name}}' disabled/>
+                </view>
+            </view>
+<view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">岗位</view>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input weui-input_font_right" value='{{liaison_ManEntity.position}}' disabled/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">生日</view>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input weui-input_font_right" value='{{liaison_ManEntity.birthdayStr}}' disabled/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">电子邮件</view>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input weui-input_font_right"
+                   value='{{liaison_ManEntity.email}}' disabled/>
+                </view>
+            </view>
+                  <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">办公室电话</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input weui-input_font_right"
+                   value='{{liaison_ManEntity.office_Telephone}}' disabled/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">住宅电话</view>
+                </view>
+                <view class="weui-cell__bd">
+      <input class="weui-input weui-input_font_right" disabled value='{{liaison_ManEntity.home_Phone}}'/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">移动电话</view>
+                </view>
+                <view class="weui-cell__bd">
+      <input class="weui-input weui-input_font_right" disabled value='{{liaison_ManEntity.telephone}}'/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">喜好</view>
+                </view>
+                <view class="weui-cell__bd">
+      <input data-name='Hobby' bindinput="visInput" disabled class="weui-input weui-input_font_right" value='{{liaison_ManEntity.hobby}}'/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">决策人</view>
+                </view>
+                <view class="weui-cell__bd">
+      <input data-name='IsPolicymakers' bindinput="visInput" disabled class="weui-input weui-input_font_right" value='{{liaison_ManEntity.isPolicymakersStr}}'/>
+                </view>
+            </view>
+           <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">备注</view>
+                </view>
+                <view class="weui-cell__bd">
+      <input data-name='Remark' bindinput="visInput" disabled class="weui-input weui-input_font_right" value='{{liaison_ManEntity.remark}}'/>
+                </view>
+            </view>
+    </view>
+</view>
+</view>

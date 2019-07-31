@@ -14,7 +14,10 @@
     "pages/Customer/CustomerDetail/CustomerDetail",
     "pages/Customer/AddCustomer/AddCustomer",
     "pages/Visit/Detail/VisitDetail",
-    "pages/Visit/AddVisit/AddVisit"
+    "pages/Visit/AddVisit/AddVisit",
+    "pages/LinkMan/Index/Index",
+    "pages/LinkMan/Detail/Detail",
+    "pages/LinkMan/Add/Add"
   ],
   "window": {
     "backgroundTextStyle": "light",

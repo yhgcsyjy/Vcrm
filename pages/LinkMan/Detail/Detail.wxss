@@ -1,0 +1,16 @@
+/* pages/LinkMan/Detail/Detail.wxss */
+@import '../../../utils/weui.wxss';
+.form_css{
+  padding-top: 10rpx;
+  text-align:left;
+  font-size: 24px;
+  line-height: 120px;
+  padding-bottom: 10px
+}
+.lable_css{
+ background:#fff;
+
+}
+.weui-input_font_right{
+  text-align: right;
+}

@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "SearchBox": "/Component/SearchBox/SearchBox"
+  }
+}

@@ -10,7 +10,7 @@
                     <view class="weui-label">拜访主题</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{visitEntity.visit_Objective}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{visitEntity.visit_Objective}}' disabled/>
                 </view>
             </view>
           <view class="weui-cell weui-cell_input">
@@ -18,7 +18,7 @@
                     <view class="weui-label">客户编号</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{visitEntity.customer_Code}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{visitEntity.customer_Code}}' disabled/>
                 </view>
             </view>
 <view class="weui-cell weui-cell_input">
@@ -26,7 +26,7 @@
                     <view class="weui-label">客户名称</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{visitEntity.customer_Name}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{visitEntity.customer_Name}}' disabled/>
                 </view>
             </view>
 <view class="weui-cell weui-cell_input">
@@ -34,7 +34,7 @@
                     <view class="weui-label">客户地址</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{visitEntity.customer_Address}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{visitEntity.customer_Address}}' disabled/>
                 </view>
             </view>
             <view class="weui-cell weui-cell_input">
@@ -42,7 +42,7 @@
                     <view class="weui-label">计划拜访时间</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{visitEntity.planning_Time}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{visitEntity.planning_Time}}' disabled/>
                 </view>
             </view>
             <view class="weui-cell weui-cell_input">
@@ -50,7 +50,7 @@
                     <view class="weui-label">实际拜访时间</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{visitEntity.actual_Time}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{visitEntity.actual_Time}}' disabled/>
                 </view>
             </view>
             <view class="weui-cell weui-cell_input">
@@ -58,7 +58,7 @@
                     <view class="weui-label">同行人</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{visitEntity.peer_Personnel}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{visitEntity.peer_Personnel}}' disabled/>
                 </view>
             </view>
                   <view class="weui-cell weui-cell_input">
@@ -66,7 +66,7 @@
                     <view class="weui-label">交通工具</view>
                 </view>
                 <view class="weui-cell__bd">
-                   <picker data-name='Vehicle' bindchange="vehicleChange" value="{{visitEntity.vehicle}}" range="{{vehicleList}}" >
+                   <picker data-name='vehicle' bindchange="vehicleChange" value="{{visitEntity.vehicle}}" range="{{vehicleList}}" disabled >
                  <view class="weui-select weui-input weui-input_font_right">{{visitEntity.vehicle}}</view>
                  </picker>
                 </view>
@@ -76,7 +76,7 @@
                     <view class="weui-label">拜访地点</view>
                 </view>
                 <view class="weui-cell__bd">
-      <input class="weui-input weui-input_font_right" value='{{visitEntity.visit_Address}}'/>
+      <input class="weui-input weui-input_font_right" disabled value='{{visitEntity.visit_Address}}'/>
                 </view>
             </view>
            <view class="weui-cell weui-cell_input">
@@ -84,7 +84,7 @@
                     <view class="weui-label">备注</view>
                 </view>
                 <view class="weui-cell__bd">
-      <input data-name='Remark' bindinput="visInput" class="weui-input weui-input_font_right" value='{{visitEntity.Remark}}'/>
+      <input data-name='Remark' bindinput="visInput" disabled class="weui-input weui-input_font_right" value='{{visitEntity.Remark}}'/>
                 </view>
             </view>
     </view>

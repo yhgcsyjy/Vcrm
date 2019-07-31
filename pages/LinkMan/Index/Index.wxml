@@ -1,0 +1,11 @@
+<!--pages/LinkMan/Index/Index.wxml-->
+<import src="../../../Component/LinkManComponent/LinkManComponent"/>
+<view >
+  <SearchBox id="SearchBox" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear">
+    </SearchBox>
+    </view>
+<view>
+  <block wx:for="{{linkManList}}" wx:key='{{item}}'>
+    <template is="LinkManComponent" data="{{...item}}"></template>
+  </block>
+</view>

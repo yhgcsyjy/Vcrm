@@ -5,7 +5,9 @@ import {
 } from 'config.js';
 
 App({
-  onLaunch: function () {
+  onLaunch: function (option) {
+   console.log(option)
+   console.log(option.scene);
    /*
     if(wx.canIUse('wx.login')){
       wx.showToast({

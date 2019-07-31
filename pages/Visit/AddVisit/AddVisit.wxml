@@ -103,7 +103,7 @@
             </view>
 </view>
 </view>
-<view class="btn-area">
+<view class="btn-area" style="padding-bottom:0px">
     <button form-type="submit" type="primary" size="defaultSize" over-class="other-button-hover">保存</button>
     <button form-type="reset">重置/新增</button>
 </view>

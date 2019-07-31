@@ -65,7 +65,7 @@ Page({
           {
             isBind: true,
             name: '联系人',
-            url: '/pages/Contract/Contract',
+            url: '/pages/LinkMan/Index/Index',
             icon: '/image/LinkMan.png',
             code: '11'
           },
