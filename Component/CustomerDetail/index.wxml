@@ -202,7 +202,8 @@
             </view>
 <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="diy_weui-label">电子邮件</view>
+                    <view class="diy_weui-label">
+                    电子邮件</view>
                 </view>
                 <view class="weui-cell__bd">
                   <input class="weui-input weui-input_font_right" value='{{customerEntity.email}}' disabled/>
@@ -210,18 +211,22 @@
             </view>
 <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="diy_weui-label">办公室电话</view>
+                    <view class="diy_weui-label">
+                    <image src ='/../../../../image/callphone.png' mode="scaleToFill" style="height:15px;width:15px"> </image>
+                    办公室电话</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.office_Telephone}}' disabled/>
+                  <input class="weui-input weui-input_font_right" bindtap="callphone" data-phone='{{customerEntity.office_Telephone}}'  value='{{customerEntity.office_Telephone}}' disabled/>
                 </view>
             </view>
 <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="diy_weui-label">移动电话</view>
+                    <view class="diy_weui-label">
+                    <image src ='/../../../../image/phonecall.png' style="height:15px;width:15px"> </image>
+                    移动电话</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.telephone}}' disabled/>
+                  <input class="weui-input weui-input_font_right" bindtap="callphone" data-phone='{{customerEntity.telephone}}' value='{{customerEntity.telephone}}' disabled/>
                 </view>
             </view>
             <view class="weui-cell weui-cell_input">

@@ -23,7 +23,10 @@
          <text style="padding-left:20px">联系人:</text>
           <text style="padding-left:10px">{{customerEntity.liaison_Man_Name}}</text>
           <text style="padding-left:20px">电话:</text>
-          <text style="padding-left:10px">{{customerEntity.office_Telephone}}/{{customerEntity.telephone}}</text>
+           <image src ='/../../../../image/callphone.png' mode="scaleToFill" style="height:15px;width:15px"> </image>
+          <text style="padding-left:10px" bindtap="callphone" data-phone='{{customerEntity.office_Telephone}}'>{{customerEntity.office_Telephone}}
+          </text>
+         
         </view>
         <view style="padding-bottom:10px">
          <text style="padding-left:20px">团队:</text>

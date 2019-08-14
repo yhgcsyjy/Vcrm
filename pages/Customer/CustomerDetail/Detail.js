@@ -174,6 +174,14 @@ Page({
       }
     });
   },
+  callphone:function(e){
+    wx.makePhoneCall({
+      phoneNumber:e.currentTarget.dataset.phone,
+      success:function(){
+        console.log('拔打成功');
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
