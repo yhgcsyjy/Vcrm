@@ -6,7 +6,7 @@
     </view>
 <view>
   <block wx:for="{{visitList}}" wx:key='{{item}}'>
-    <template is="VisitComponent" data="{{...item}}"></template>
+    <template is="VisitComponent" data="{{...item,visitUrl:visitUrl}}"></template>
   </block>
 </view>
    

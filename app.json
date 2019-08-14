@@ -4,26 +4,34 @@
     "pages/logs/logs",
     "pages/userInfo/userInfo",
     "pages/Clue/Clue",
-    "pages/BusinessOpportunity/BusinessOpportunity",
-    "pages/Contract/Contract",
     "pages/Visit/Index/Visit",
     "pages/StayDo/StayDo",
     "pages/DataView/DataView",
     "pages/Customer/Index/Customer",
     "pages/Customer/ClientHighSeas/ClientHighSeas",
-    "pages/Customer/CustomerDetail/CustomerDetail",
+    "pages/Customer/CustomerDetail/Detail",
     "pages/Customer/AddCustomer/AddCustomer",
     "pages/Visit/Detail/VisitDetail",
     "pages/Visit/AddVisit/AddVisit",
     "pages/LinkMan/Index/Index",
     "pages/LinkMan/Detail/Detail",
-    "pages/LinkMan/Add/Add"
+    "pages/LinkMan/Add/Add",
+    "pages/BusinessChance/Index/Index",
+    "pages/BusinessChance/Add/Index",
+    "pages/BusinessChance/Detail/Index",
+    "pages/BusinessPay/Index/Index",
+    "pages/BusinessPay/Detail/Index",
+    "pages/BusinessPay/Add/Index",
+    "pages/ContractBasic/Add/Index",
+    "pages/ContractBasic/Detail/Index",
+    "pages/ContractBasic/Index/Index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "VCRM客户管理",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
   },
   "tabBar": {
     "list": [

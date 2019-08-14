@@ -1,31 +1,18 @@
-// pages/CustomerDetail/CustomerDetail.js
-const _HTTP = require('../../../utils/HTTP.js')
+// pages/BusinessChance/Detail/Index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    CustomerId:"",
-    customerEntity:null,
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      this.setData({
-        CustomerId:options.CustomerId
-      })
-      if(options && options.CustomerId!=''){
-        _HTTP.Get({ url: 'api/MDTCRM_Customer/GetMDTCRM_CustomByID/' + options.CustomerId, data: '' }).then(res     => {
-          this.setData({
-            customerEntity: res.data.data,
-          })
-        }).catch(res => {
-          console.log(res.data);
-        });
-      }
+
   },
 
   /**

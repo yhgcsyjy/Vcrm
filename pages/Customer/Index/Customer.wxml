@@ -5,8 +5,15 @@
     </SearchBox>
     </view>
 <view>
+<!--
+
+<scroll-view scroll-top="{{scrollTop}}" lower-threshold="300" scroll-y='true' 
+  style="height:{{scrollHeight}}px;" bindscrolltolower="bindDownLoad" bindscrolltoupper="topLoad"  bindscroll="scroll">-->
   <block wx:for="{{customerList}}" wx:key='{{item}}'>
-    <template is="Template" data="{{...item}}"></template>
-  </block>
+      <template is="Template" data="{{...item}}"></template>
+    </block>
+  <view wx:if="{{bottom}}" >正在加载</view>
+  <!--
+</scroll-view>-->
 </view>
    

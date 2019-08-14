@@ -1,0 +1,76 @@
+<!--pages/Customer/CustomerDetail2/Detail.wxml-->
+<import src="../../../Component/CustomerDetail/index"/>
+<import src="../../../Component/LinkManComponent/LinkManComponent"/>
+<import src="../../../Component/VisitComponent/VisitComponent"/>
+
+<import src="../../../Component/BusinessChance/index"/>
+<import src="../../../Component/BusinessPay/index"/>
+<import src="../../../Component/ContractBasic/index"/>
+<view class="page">
+    <view class="page__bd">
+        <view style="padding:15px 15px,padding-bottom:10px;font-size:14px">
+        <view style="padding-bottom:10px">
+         <text  style="padding-left:20px">客户:</text>
+         <text style="padding-left:10px">{{customerEntity.customer_Name}}</text>
+          <text  style="padding-left:20px">状态:</text>
+         <text  style="margin-left:20px;padding:2px 10px;border:1px solid #FF7033;color:#FF7033">{{customerEntity.state}}</text>
+        </view>
+        <view style="padding-bottom:10px">
+        <text  style="padding-left:20px">地址:</text>
+        <text  style="padding-left:10px">{{customerEntity.customer_Address}}</text>
+        </view>
+        <view style="padding-bottom:10px">
+         <text style="padding-left:20px">联系人:</text>
+          <text style="padding-left:10px">{{customerEntity.liaison_Man_Name}}</text>
+          <text style="padding-left:20px">电话:</text>
+          <text style="padding-left:10px">{{customerEntity.office_Telephone}}/{{customerEntity.telephone}}</text>
+        </view>
+        <view style="padding-bottom:10px">
+         <text style="padding-left:20px">团队:</text>
+          <text style="padding-left:10px">{{customerEntity.sales_Team}}</text>
+          <text style="padding-left:2px">负责人:</text>
+          <text style="padding-left:5px;border:1px solid #FF7033;color:#FF7033">{{customerEntity.sales_Leader}}/{{customerEntity.sales_Assistant}}/{{customerEntity.sales}}</text>
+        </view>
+        </view>
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);width:{{sliderWidth}}px"></view>
+            </view>
+            <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                 <template is="CustomerDetail" data="{{customerEntity}}"></template>
+                </view>
+                <view class="tab__content_a_left" hidden="{{activeIndex != 1}}">
+                  <block wx:for="{{linkManList}}" wx:key='{{item}}'>
+                    <template is="LinkManComponent" data="{{...item,linManUrl:linManUrl}}"></template>
+                  </block>
+                </view>
+                <view class="tab__content_a_left" hidden="{{activeIndex != 2}}">
+                    <block wx:for="{{visitList}}" wx:key='{{item}}'>
+                      <template is="VisitComponent" data="{{...item,visitUrl:visitUrl}}"></template>
+                    </block>
+                </view>
+                <view class="tab__content_a_left" hidden="{{activeIndex != 3}}">
+                    <block wx:for="{{businessChance}}" wx:key='{{item}}'>
+                      <template is="BusinessChanceComponent" data="{{...item,busChanceUrl:busChanceUrl}}"></template>
+                    </block>
+                </view>
+                <view class="tab__content_a_left" hidden="{{activeIndex != 4}}">
+                    <block wx:for="{{contractBasicList}}" wx:key='{{item}}'>
+                      <template is="ContractBaseComponent" data="{{...item,contractBaseUrl:contractBaseUrl}}"></template>
+                    </block>
+                </view>
+                <view class="tab__content_a_left" hidden="{{activeIndex != 5}}">
+                    <block wx:for="{{businessPayList}}" wx:key='{{item}}'>
+                      <template is="BusinessPayComponent" data="{{...item,busPayUrl:busPayUrl}}"></template>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

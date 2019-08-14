@@ -1,5 +1,5 @@
-// pages/BusinessOpportunity/BusinessOpportunity.js
-Page({
+// Component/BusinessChance/index.js
+Component({
   /**
    * 组件的属性列表
    */

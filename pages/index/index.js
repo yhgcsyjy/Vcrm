@@ -19,8 +19,16 @@ Page({
     var listService = [
       {
         title: 'VCRM',
-        items: [{
-          name: '线索',
+        items: [
+          {
+            isBind: true,
+            name: '商机',
+            url: '/pages/BusinessChance/Index/Index',
+            icon: '/image/icon_nav_cell.png',
+            code: '11'
+          },
+          {
+          name: '拜访计划',
           url: '/pages/Clue/Clue',
           icon: '/image/deployment.png',
           code: '11'
@@ -41,15 +49,7 @@ Page({
           },
           {
             isBind: true,
-            name: '商机',
-            url: '/pages/BusinessOpportunity/BusinessOpportunity',
-            icon: '/image/icon_nav_cell.png',
-            code: '11'
-          }
-          ,
-          {
-            isBind: true,
-            name: '拜访',
+            name: '客户联系',
             url: '/pages/Visit/Index/Visit',
             icon: '/image/visit.png',
             code: '11'
@@ -58,7 +58,7 @@ Page({
           {
             isBind: true,
             name: '合同',
-            url: '/pages/Contract/Contract',
+            url: '/pages/ContractBasic/Index/Index',
             icon: '/image/Contract.png',
             code: '11'
           },

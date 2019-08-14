@@ -26,7 +26,7 @@ const config = {
   },
   serverToken: "",
   jscode2sessionModel:"",
-  systemInfo:"",
+  systemInfo:""
 }
 
 export {config}

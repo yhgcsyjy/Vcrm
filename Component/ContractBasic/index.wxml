@@ -1,0 +1,23 @@
+<!--Component/BusinessChance/index.wxml-->
+<template name="ContractBaseComponent">
+  <navigator url='{{contractBaseUrl}}{{contractId}}' class='customerItem-bg' style='display: flex;flex-direction: column; align-items:left; margin:10px;padding:5px;background-color: white;border-bottom: 1px solid aliceblue;'>
+    <view class='customerItem-text'>
+      <view class='customerItem-text-l' style='border-right:0px solid #D9D9D9;padding-right:10px'>
+        <text class="customerItem-text">{{contractNo}}</text> 
+        <view style='font-size:14px;'>
+        <text>{{contractTitle}}</text>
+         <text style='padding-left:5px'>{{contractProperty}}</text>
+         <text style='padding-left:5px'>{{contractVersion}}</text>
+        </view>
+        <view>
+          <text style='padding:0px;color:#1AAD00;font-size:14px'>{{signProperty}}</text>
+           <text style='padding-left:10px;font-size:14px;'>{{productCategoryName}}</text>
+        </view>
+      </view>
+      <view class='customerItem-text-r'>
+         <text style='padding-left:0px; color:red;font-size:14px'>{{productLineName}}             </text>
+         <text style='padding-left:20px; color:red;font-size:14px'>{{productModeName}}             </text>
+      </view>
+    </view>
+  </navigator>
+</template>

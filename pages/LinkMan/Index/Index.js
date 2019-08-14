@@ -21,6 +21,7 @@ Page({
     searchstr: '',
     pagelist: 0,
     pagesize: 10,
+    linManUrl:'../Detail/Detail?liaison_ManId='
   },
 
   /**

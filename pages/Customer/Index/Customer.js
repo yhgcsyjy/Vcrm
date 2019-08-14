@@ -1,5 +1,6 @@
 // pages/Customer.js
 const _HTTP = require('../../../utils/HTTP.js')
+const config = require('../../../config.js');
 const app = getApp()
 Page({
   /**
@@ -15,24 +16,30 @@ Page({
   data: {
     show: false,//控制下拉列表的显示隐藏，false隐藏、true显示
     index: 0,//选择的下拉列表下标
-    customerList:[],
+    customerList: [],
     addflag: true,  //判断是否显示搜索框右侧部分
     addimg: '/image/activity_add.png',
     searchstr: '',
-    pagelist:0,
-    pagesize:10,
+    pagelist: 0,
+    pagesize: 10,
+    scrollHeight: 400,
+    bottom: false,
   },
-  onLoad(){
+  onLoad() {
     this.getData(this.data.searchstr);
+    var syst = config.config.systemInfo;
+    this.setData({
+      scrollHeight: syst.windowHeight,
+    })
   },
-  getData(_where){
-    var plist=this.data.pagelist;
+  getData(_where) {
+    var plist = this.data.pagelist;
     var psize = this.data.pagesize;
-    var isClaim=1
+    var isClaim = 1
     var _url = 'api/MDTCRM_Customer/GetPageList?pagelist=' + plist + '&pagesize=' + psize + '&isClaim=' + isClaim;
-    if(_where && _where!=null && _where!='')
+    if (_where && _where != null && _where != '')
       _url += "&_where=" + _where;
-    _HTTP.Get({ url: _url, data: '' })      .then(res => {
+    _HTTP.Get({ url: _url, data: '' }).then(res => {
       this.setData({
         customerList: res.data.data,
       })
@@ -86,10 +93,33 @@ Page({
   },
   //清空搜索框
   activity_clear(e) {
-    let d=e.detail;
+    let d = e.detail;
     this.setData({
       searchstr: ''
     })
     this.getData(this.data.searchstr);
   },
+  onPullDownRefresh: function () {
+    wx.showToast({
+      title: '别拉下',
+    })
+    wx.stopPullDownRefresh()
+  },
+  scrollTop(e) {
+    console.log(e);
+  },
+  bindDownLoad(e) {
+    console.log(e);
+  },
+  topLoad(e) {
+    var plist = this.data.pagelist + 1;
+    this.setData({
+      pagelist: plist,
+    });
+    this.getData(this.data.searchstr);
+  },
+  scroll(e) {
+    console.log(e);
+  }
+
 })

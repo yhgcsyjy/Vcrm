@@ -27,7 +27,7 @@ Page({
         }
         _HTTP.Get(parms).then(res=>{
           this.setData({
-            visitEntity:res.data
+            visitEntity:res.data.data
           })
         }).catch(res=>{
           wx.showToast({

@@ -1,0 +1,38 @@
+/* pages/Customer/CustomerDetail2/Detail.wxss */
+@import '../../../utils/weui.wxss';
+.form_css{
+  padding-top: 10rpx;
+  text-align:left;
+  font-size: 24px;
+  line-height: 120px;
+  padding-bottom: 10px
+}
+.lable_css{
+ background:#fff;
+
+}
+.weui-input_font_right{
+  text-align: right;
+}
+page,
+.page,
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-tab__content{
+    padding-top: 5px;
+    text-align: center;
+}
+.weui-tab__content_a_left{
+   padding-top: 5px;
+}
+.diy_weui-label{
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.weui-cells__title{
+  text-align: left
+}

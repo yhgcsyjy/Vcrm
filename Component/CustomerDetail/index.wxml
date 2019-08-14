@@ -1,96 +1,97 @@
-<!--pages/CustomerDetail/CustomerDetail.wxml-->
-<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+<!--Component/CustomerDetail/index.wxml-->
+<template name="CustomerDetail">
+<view  class="page" xmlns:wx="http://www.w3.org/1999/xhtml" >
+<view>
 <view  class="weui-cells__title">
 客户详情
 </view>
-<view>
 <view  class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">客户编号</view>
+                    <view class="diy_weui-label">客户编号</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Code}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Code}}' disabled/>
                 </view>
             </view>
 <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">客户名称</view>
+                    <view class="diy_weui-label">客户名称</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Name}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Name}}' disabled/>
                 </view>
             </view>
 <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">城市</view>
+                    <view class="diy_weui-label">城市</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_CityC}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_CityC}}' disabled/>
                 </view>
             </view>
 <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">客户地址</view>
+                    <view class="diy_weui-label">客户地址</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Address}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Address}}' disabled/>
                 </view>
             </view>
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">获得途径</view>
+                    <view class="diy_weui-label">获得途径</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Access}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Access}}' disabled/>
                 </view>
             </view>
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">企业规模</view>
+                    <view class="diy_weui-label">企业规模</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Lnsize}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Lnsize}}' disabled/>
                 </view>
             </view>
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">行业</view>
+                    <view class="diy_weui-label">行业</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Industry}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Industry}}' disabled/>
                 </view>
             </view>
                   <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">海关注册编码</view>
+                    <view class="diy_weui-label">海关注册编码</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Registration_Code}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Registration_Code}}' disabled/>
                 </view>
             </view>
                <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">社会信用代码</view>
+                    <view class="diy_weui-label">社会信用代码</view>
                 </view>
                 <view class="weui-cell__bd">
-      <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Unified_Social_Credit_Code}}'/>
+      <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Unified_Social_Credit_Code}}' disabled/>
                 </view>
             </view>
              <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">社会信用代码</view>
+                    <view class="diy_weui-label">社会信用代码</view>
                 </view>
                 <view class="weui-cell__bd">
-      <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Unified_Social_Credit_Code}}'/>
+      <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Unified_Social_Credit_Code}}' disabled/>
               </view>
             </view>
               <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">是否仓储</view>
+                    <view class="diy_weui-label">是否仓储</view>
                 </view>
                 <view class="weui-cell__bd">
-      <input class="weui-input weui-input_font_right"  value='{{customerEntity.isWarehousingStr}}'/>
+      <input class="weui-input weui-input_font_right"  value='{{customerEntity.isWarehousingStr}}' disabled/>
                 </view>
         
                 </view>
@@ -105,74 +106,74 @@
 <view  class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">客户类型</view>
+                    <view class="diy_weui-label">客户类型</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Type}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Type}}' disabled/>
                 </view>
             </view>
           <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">客户分类</view>
+                    <view class="diy_weui-label">客户分类</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Class}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.customer_Class}}' disabled/>
                 </view>
             </view>
 <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">对象性质</view>
+                    <view class="diy_weui-label">对象性质</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.object_Properties}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.object_Properties}}' disabled/>
                 </view>
             </view>
 <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">所属团队</view>
+                    <view class="diy_weui-label">所属团队</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.sales_Team}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.sales_Team}}' disabled/>
                 </view>
             </view>
 <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">销售助理</view>
+                    <view class="diy_weui-label">销售助理</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.sales_Assistant}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.sales_Assistant}}' disabled/>
                 </view>
             </view>
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">销售组长</view>
+                    <view class="diy_weui-label">销售组长</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.sales_Leader}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.sales_Leader}}' disabled/>
                 </view>
             </view>
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">经理/销售</view>
+                    <view class="diy_weui-label">经理/销售</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.sales}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.sales}}' disabled/>
                 </view>
             </view>
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">沟通状态</view>
+                    <view class="diy_weui-label">沟通状态</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.connect_State}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.connect_State}}' disabled/>
                 </view>
             </view>
                   <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">密友会级别</view>
+                    <view class="diy_weui-label">密友会级别</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.membership_Level}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.membership_Level}}' disabled/>
                 </view>
             </view>
 </view>
@@ -185,52 +186,52 @@
 <view  class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">姓名</view>
+                    <view class="diy_weui-label">姓名</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.liaison_Man_Name}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.liaison_Man_Name}}' disabled/>
                 </view>
             </view>
           <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">称呼</view>
+                    <view class="diy_weui-label">称呼</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.liaison_Man_Call}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.liaison_Man_Call}}' disabled/>
                 </view>
             </view>
 <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">电子邮件</view>
+                    <view class="diy_weui-label">电子邮件</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.email}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.email}}' disabled/>
                 </view>
             </view>
 <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">办公室电话</view>
+                    <view class="diy_weui-label">办公室电话</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.office_Telephone}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.office_Telephone}}' disabled/>
                 </view>
             </view>
 <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">移动电话</view>
+                    <view class="diy_weui-label">移动电话</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.telephone}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.telephone}}' disabled/>
                 </view>
             </view>
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">喜好</view>
+                    <view class="diy_weui-label">喜好</view>
                 </view>
                 <view class="weui-cell__bd">
-                  <input class="weui-input weui-input_font_right" value='{{customerEntity.hobby}}'/>
+                  <input class="weui-input weui-input_font_right" value='{{customerEntity.hobby}}' disabled/>
                 </view>
             </view>
 </view>
 </view>
-
+</template>

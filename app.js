@@ -67,7 +67,7 @@ App({
                   //获取api授权
                   wx.request({
                     url: config.api_base_url + 'api/System/Token',
-                    data: { Uid: loginres.data.userid, Role: 'Client', Project: 'VCRM', TokenType: 'MiniProgramExp' },
+                    data: { Uid: loginres.data.userid, Role: 'Client', Project: 'VCRM', TokenType: 'MiniProgram' },
                     header: config.header,
                     success: function (res) {
                       config.serverToken = res.data;
