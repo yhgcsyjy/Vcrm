@@ -1,6 +1,6 @@
 const config = {
-  //api_base_url: 'https://crmtest.mcpsystem.com/',
-  api_base_url:"https://localhost:44340/",
+  api_base_url: 'https://crmtest.mcpsystem.com/',
+  //api_base_url:"https://localhost:44340/",
   tips: {
     1001: '对不起!找不到该用户,请联系管理员',
     1002: 'appkey无效',
