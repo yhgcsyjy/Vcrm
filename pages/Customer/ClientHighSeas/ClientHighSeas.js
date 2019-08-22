@@ -1,6 +1,7 @@
 // pages/Customer.js
 const _HTTP = require('../../../utils/HTTP.js')
-
+const config = require('../../../config.js');
+var loadMoreView;
 Page({
   /**
    * 组件的属性列表
@@ -19,21 +20,38 @@ Page({
     addflag: true,  //判断是否显示搜索框右侧部分
     addimg: '/image/activity_add.png',
     searchstr: '',
+    pagelist: config.config.pagelist,
+    pagesize: config.config.pagesize,
+    scrollHeight: 400,
+    bottom: false
   },
   onLoad(){
-    this.getData(null);
+    loadMoreView = this.selectComponent("#loadmoreview")
+    this.getData(this.data.searchstr);
+    var syst = config.config.systemInfo;
+    this.setData({
+      scrollHeight: syst.windowHeight,
+    })
   },
   getData(_where){
-    var plist=0;
-    var psize=10;
+    var plist = this.data.pagelist;
+    var psize = this.data.pagesize;
     var isClaim=0;
     var _url = 'api/MDTCRM_Customer/GetPageList?pagelist=' + plist + '&pagesize=' + psize + '&isClaim=' + isClaim;
     if(_where && _where!=null && _where!='')
       _url += "&_where=" + _where;
     _HTTP.Get({ url: _url, data: '' })      .then(res => {
+      var items = this.data.customerList
+      if (this.data.pagelist == 0) {
+        items = res.data.data;
+      }
+      else {
+        items = items.concat(res.data.data)
+      }
       this.setData({
-        customerList: res.data.data,
+        customerList: items
       })
+      loadMoreView.loadMoreComplete(res, psize);
     }).catch(res => {
       console.log(res.data);
     });
@@ -67,9 +85,11 @@ Page({
   searchList(ev) {
     let e = ev.detail;
     this.setData({
-      searchstr: e.detail.value
+      searchstr: e.detail.value,
+      pagelist: 0,
+      customerList: []
     })
-    this.getData(e.detail.value);
+    this.getData(this.data.searchstr)
   },
   //搜索回调
   endsearchList(e) {
@@ -78,20 +98,30 @@ Page({
   // 取消搜索
   cancelsearch() {
     this.setData({
-      searchstr: ''
+      searchstr: '',
+      pagelist: 0,
     })
-    this.setData({
-      customerList: this.getData(null),
-    })
+    this.getData(this.data.searchstr);
   },
   //清空搜索框
   activity_clear(e) {
-
+    let d = e.detail;
     this.setData({
-      searchstr: ''
+      searchstr: '',
+      pagelist: 0,
     })
+    this.getData(this.data.searchstr);
+  },
+  _onScrollToLower: function () {
+    loadMoreView.loadMore()
+  },
+  loadMoreListener: function (e) {
     this.setData({
-      customerList: this.getCustomerList(),
+      pagelist: this.data.pagelist + 1,
     })
+    this.getData()
+  },
+  clickLoadMore: function (e) {
+    this.getData()
   },
 })

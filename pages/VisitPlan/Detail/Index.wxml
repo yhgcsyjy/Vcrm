@@ -1,0 +1,7 @@
+<!--pages/VisitPlan/Detail/Index.wxml-->
+<import src="../../../Component/VisitPlanDetail/index"/>
+<view>
+  <block wx:for="{{visitPlanDetailList}}" wx:key='{{item}}'>
+    <template is="VisitPlanDetailComponent" data="{{...item,visitPlanDetailUrl:visitPlanDetailUrl}}"></template>
+  </block>
+</view>

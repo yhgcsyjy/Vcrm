@@ -1,5 +1,7 @@
 // pages/Visit.js
 const _HTTP = require('../../../utils/HTTP.js');
+const config = require('../../../config.js');
+var loadMoreView;
 const app=getApp;
 Page({
   /**
@@ -19,9 +21,10 @@ Page({
     addflag: true,  //判断是否显示搜索框右侧部分
     addimg: '/image/activity_add.png',
     searchstr: '',
-    pagelist:0,
-    pagesize:10,
+    pagelist: config.config.pagelist,
+    pagesize: config.config.pagesize,
     visitUrl:'../Detail/VisitDetail?visitId=',
+    scrollHeight: 400,
   },
 
   /**
@@ -31,7 +34,12 @@ Page({
 
   },
   onLoad() {
+    loadMoreView = this.selectComponent("#loadmoreview")
     this.getData(this.data.searchstr);
+    var syst = config.config.systemInfo;
+    this.setData({
+      scrollHeight: syst.windowHeight,
+    })
   },
   getData(_where){
     var data={
@@ -43,9 +51,17 @@ Page({
       data["_where"] = _where;
     }
     _HTTP.Get({ url: "api/Visit/GetPageList", data: data}).then(res=>{
+      var items = this.data.visitList
+      if (this.data.pagelist == 0) {
+        items = res.data.data;
+      }
+      else {
+        items = items.concat(res.data.data)
+      }
       this.setData({
-        visitList:res.data.data
+        visitList: items
       })
+      loadMoreView.loadMoreComplete(res, this.data.pagesize);
     }).catch(res=>{
       console.log(res.data);
     })
@@ -61,7 +77,9 @@ Page({
   searchList(ev) {
     let e = ev.detail;
     this.setData({
-      searchstr: e.detail.value
+      searchstr: e.detail.value,
+      pagelist: 0,
+      visitList: []
     })
     this.getData(this.data.searchstr);
   },
@@ -72,15 +90,29 @@ Page({
   // 取消搜索
   cancelsearch() {
     this.setData({
-      searchstr: ''
+      searchstr: '',
+      pagelist: 0,
     })
     this.getData(this.data.searchstr);
   },
   //清空搜索框
   activity_clear(e) {
     this.setData({
-      searchstr: ''
+      searchstr: '',
+      pagelist: 0,
     })
     this.getData(this.data.searchstr);
+  },
+  _onScrollToLower: function () {
+    loadMoreView.loadMore()
+  },
+  loadMoreListener: function (e) {
+    this.setData({
+      pagelist: this.data.pagelist + 1,
+    })
+    this.getData()
+  },
+  clickLoadMore: function (e) {
+    this.getData()
   },
 })

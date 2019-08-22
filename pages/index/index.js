@@ -29,7 +29,7 @@ Page({
           },
           {
           name: '拜访计划',
-          url: '/pages/Clue/Clue',
+          url: '/pages/VisitPlan/Index/Index',
           icon: '/image/deployment.png',
           code: '11'
         },
@@ -72,7 +72,7 @@ Page({
           {
             isBind: true,
             name: '黑名单',
-            url: '/pages/Contract/Contract',
+            url: '/pages/BlackList/Index/Index',
             icon: '/image/blackList.png',
             code: '11'
           }
@@ -80,26 +80,33 @@ Page({
       },
 
       {
-        title: '密云小站',
+        title: '密云助手',
         items: [{
-          name: '消息',
+          name: '拜访签到',
           url: '',
           icon: '/image/icon_nav_dialog.png',
           code: '11'
         },
         {
           isBind: true,
-          name: '预约管理',
+          name: '工作报告',
           url: '',
           icon: '/image/icon_nav_icons.png',
           code: '11'
         }, {
           isBind: true,
-          name: '我的名片',
+          name: '成本发布',
           url: '',
           icon: '/image/icon_nav_layout.png',
           code: '11'
         },
+          {
+            isBind: true,
+            name: '询价',
+            url: '',
+            icon: '/image/icon_nav_layout.png',
+            code: '11'
+          },
         ]
       },
        {

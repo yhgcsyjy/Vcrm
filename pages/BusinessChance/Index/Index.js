@@ -1,66 +1,87 @@
 // pages/BusinessChance/Index/index.js
+const _HTTP = require('../../../utils/HTTP.js');
+const config=require('../../../config.js');
+const app = getApp;
 Page({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+
+  },
 
   /**
-   * 页面的初始数据
+   * 组件的初始数据
    */
   data: {
-
+    show: false,//控制下拉列表的显示隐藏，false隐藏、true显示
+    index: 0,//选择的下拉列表下标
+    businessChanceList: [],
+    addflag: true,  //判断是否显示搜索框右侧部分
+    addimg: '/image/activity_add.png',
+    searchstr: '',
+    pagelist: config.config.pagelist,
+    pagesize: 20,
+    busChanceUrl: '../Detail/Index?businessChanceId=',
   },
 
   /**
-   * 生命周期函数--监听页面加载
+   * 组件的方法列表
    */
-  onLoad: function (options) {
+  methods: {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onLoad() {
+    this.getData(this.data.searchstr);
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  getData(_where) {
+    var data = {
+      pagelist: this.data.pagelist,
+      pagesize: this.data.pagesize,
+    }
+    if (_where != null) {
+      data["_where"] = _where;
+    }
+    _HTTP.Get({
+      url: "api/BusinessChance/GetPageList", data: data }).then(res => {
+      this.setData({
+        businessChanceList: res.data.data
+      })
+    }).catch(res => {
+      console.log(res.data);
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  // 搜索框右侧 事件
+  addhandle() {
+    console.log('触发搜索框右侧事件')
+    wx.navigateTo({
+      url: "/pages/BusinessChance/Add/Index",
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  //搜索框输入时触发
+  searchList(ev) {
+    let e = ev.detail;
+    this.setData({
+      searchstr: e.detail.value
+    })
+    this.getData(this.data.searchstr);
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  //搜索回调
+  endsearchList(e) {
+    console.log('查询数据')
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  // 取消搜索
+  cancelsearch() {
+    this.setData({
+      searchstr: ''
+    })
+    this.getData(this.data.searchstr);
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  //清空搜索框
+  activity_clear(e) {
+    this.setData({
+      searchstr: ''
+    })
+    this.getData(this.data.searchstr);
+  },
 })

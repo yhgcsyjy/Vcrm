@@ -1,2 +1,12 @@
 <!--pages/BusinessChance/Index/index.wxml-->
-<text>pages/BusinessChance/Index/index.wxml</text>
+<import src="../../../Component/BusinessChance/index"/>
+<view >
+  <SearchBox id="SearchBox" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear">
+    </SearchBox>
+    </view>
+<view>
+  <block wx:for="{{businessChanceList}}" wx:key='{{item}}'>
+    <template is="BusinessChanceComponent" data="{{...item,busChanceUrl:busChanceUrl}}"></template>
+  </block>
+</view>
+   

@@ -1,0 +1,15 @@
+<!--pages/VisitPlan/Index/Index.wxml-->
+<import src="../../../Component/VisitPlan/index"/>
+<view >
+  <SearchBox id="SearchBox" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear">
+    </SearchBox>
+    </view>
+<view>
+ <scroll-view scroll-y style="height: {{scrollHeight}}px; margin-top: 10px;" bindscrolltolower='_onScrollToLower'>
+  <block wx:for="{{visitPlanList}}" wx:key='{{item}}'>
+    <template is="VisitPlanComponent" data="{{...item,visitPlanUrl:visitPlanUrl}}"></template>
+  </block>
+   <loadmore id="loadmoreview" bindloadMoreListener='loadMoreListener' bindclickLoadMore='clickLoadMore'></loadmore>
+ </scroll-view>
+</view>
+   

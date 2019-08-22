@@ -5,8 +5,11 @@
     </SearchBox>
     </view>
 <view>
+ <scroll-view scroll-y style="height: {{scrollHeight}}px; margin-top: 10px;" bindscrolltolower='_onScrollToLower'>
   <block wx:for="{{visitList}}" wx:key='{{item}}'>
     <template is="VisitComponent" data="{{...item,visitUrl:visitUrl}}"></template>
   </block>
+    <loadmore id="loadmoreview" bindloadMoreListener='loadMoreListener' bindclickLoadMore='clickLoadMore'></loadmore>
+ </scroll-view>
 </view>
    

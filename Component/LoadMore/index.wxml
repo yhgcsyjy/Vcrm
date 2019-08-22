@@ -1,0 +1,5 @@
+<!--Component/LoadMore/index.wxml-->
+<view id="loadmoreview" class="loadmore" hidden='{{!showThis}}' bindtap='clickLoadMore'>
+    <image class="icon {{showIcon?'active':''}}" src='../../image/loading.png' hidden='{{!showIcon}}'/>
+    <text>{{text}}</text>
+</view>

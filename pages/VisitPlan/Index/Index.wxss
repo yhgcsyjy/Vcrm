@@ -1,0 +1,2 @@
+/* pages/VisitPlan/Index/Index.wxss */
+@import '/utils/weui.wxss';

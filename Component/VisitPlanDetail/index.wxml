@@ -1,0 +1,25 @@
+<!--Component/VisitPlanDetail/index.wxml-->
+<template name="VisitPlanDetailComponent">
+  <navigator url="" class='customerItem-bg' style='display: flex;flex-direction: column; align-items:left; margin:10px;padding:5px;background-color: white;border-bottom: 1px solid aliceblue;'>
+    <view class='customerItem-text'>
+      <view class='customerItem-text-l' style='border-right:0px solid #D9D9D9;padding-right:10px'>
+        <text class="customerItem-text">{{customerFrom}}</text> 
+        <view style='font-size:14px;'>
+        <text>{{customer_Name}}</text>
+        </view>
+        <view>
+          <text style='padding-left:0px;font-size:14px;'>{{businessType}}</text>
+           <text style='padding-left:10px;font-size:14px;'>{{Bidding}}</text>
+           <text style='padding-left:10px;font-size:14px;'>{{monthTarget}}</text>
+        </view>
+      </view>
+      <view class='customerItem-text-r'>
+         <text style='padding-left:0px; color:red;font-size:14px'>{{overview}}</text>
+      </view>
+       <view class='customerItem-text-r'>
+         <text style='padding-left:0px; color:red;font-size:14px'>{{remark}}</text>
+      </view>
+    </view>
+  </navigator>
+</template>
+

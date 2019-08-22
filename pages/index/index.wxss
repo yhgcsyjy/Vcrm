@@ -118,18 +118,18 @@ padding:10px 10px;
 .weui-grid_label {
     display: block;
     text-align: center;
-    font-weight: bold;
-    color: #707070;
-    font-size: 16px;
+    font-weight:600;
+    color:#404040;
+    font-size: 14px;
+    font-family:'Microsoft YaHei';
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 .grid-title{
     display: block;
-  
     font-weight: bold;
-    color: #707070;
+    color: #404040;
     font-size: 14px;
     white-space: nowrap;
     text-overflow: ellipsis;

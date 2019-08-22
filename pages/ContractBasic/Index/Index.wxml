@@ -1,2 +1,14 @@
 <!--pages/ContractBasic/Index/Index.wxml-->
-<text>pages/ContractBasic/Index/Index.wxml</text>
+<import src="../../../Component/ContractBasic/index"/>
+<view >
+  <SearchBox id="SearchBox" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear">
+    </SearchBox>
+    </view>
+<view>
+  <scroll-view scroll-y style="height: {{scrollHeight}}px; margin-top: 10px;" bindscrolltolower='_onScrollToLower'>
+      <block wx:for="{{contractBasicList}}" wx:key='{{item}}'>
+          <template is="ContractBaseComponent" data="{{...item}}"></template>
+      </block>
+      <loadmore id="loadmoreview" bindloadMoreListener='loadMoreListener' bindclickLoadMore='clickLoadMore'></loadmore>
+    </scroll-view>
+</view>

@@ -1,6 +1,7 @@
 // pages/Customer.js
-const _HTTP = require('../../../utils/HTTP.js')
+const _HTTP = require('../../../utils/HTTP.js');
 const config = require('../../../config.js');
+var loadMoreView ;
 const app = getApp()
 Page({
   /**
@@ -20,12 +21,13 @@ Page({
     addflag: true,  //判断是否显示搜索框右侧部分
     addimg: '/image/activity_add.png',
     searchstr: '',
-    pagelist: 0,
-    pagesize: 10,
+    pagelist: config.config.pagelist,
+    pagesize: config.config.pagesize,
     scrollHeight: 400,
-    bottom: false,
+    bottom: false
   },
   onLoad() {
+    loadMoreView = this.selectComponent("#loadmoreview")
     this.getData(this.data.searchstr);
     var syst = config.config.systemInfo;
     this.setData({
@@ -40,9 +42,19 @@ Page({
     if (_where && _where != null && _where != '')
       _url += "&_where=" + _where;
     _HTTP.Get({ url: _url, data: '' }).then(res => {
+      var items = this.data.customerList
+      if(this.data.pagelist==0)
+      {
+        items = res.data.data;
+      }
+      else
+      {
+        items = items.concat(res.data.data)
+      }
       this.setData({
-        customerList: res.data.data,
+        customerList:items
       })
+      loadMoreView.loadMoreComplete(res, psize);
     }).catch(res => {
       console.log(res.data);
     });
@@ -76,7 +88,9 @@ Page({
   searchList(ev) {
     let e = ev.detail;
     this.setData({
-      searchstr: e.detail.value
+      searchstr: e.detail.value,
+      pagelist:0,
+      customerList:[]
     })
     this.getData(this.data.searchstr)
   },
@@ -87,7 +101,8 @@ Page({
   // 取消搜索
   cancelsearch() {
     this.setData({
-      searchstr: ''
+      searchstr: '',
+      pagelist: 0,
     })
     this.getData(this.data.searchstr);
   },
@@ -95,31 +110,21 @@ Page({
   activity_clear(e) {
     let d = e.detail;
     this.setData({
-      searchstr: ''
+      searchstr: '',
+      pagelist: 0,
     })
     this.getData(this.data.searchstr);
   },
-  onPullDownRefresh: function () {
-    wx.showToast({
-      title: '别拉下',
-    })
-    wx.stopPullDownRefresh()
+  _onScrollToLower: function () {
+    loadMoreView.loadMore()
   },
-  scrollTop(e) {
-    console.log(e);
-  },
-  bindDownLoad(e) {
-    console.log(e);
-  },
-  topLoad(e) {
-    var plist = this.data.pagelist + 1;
+  loadMoreListener: function (e) {
     this.setData({
-      pagelist: plist,
-    });
-    this.getData(this.data.searchstr);
+      pagelist: this.data.pagelist+1,
+    })
+    this.getData()
   },
-  scroll(e) {
-    console.log(e);
-  }
-
+  clickLoadMore: function (e) {
+    this.getData()
+  },
 })

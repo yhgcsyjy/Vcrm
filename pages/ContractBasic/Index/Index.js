@@ -1,66 +1,128 @@
 // pages/ContractBasic/Index/Index.js
+const _HTTP = require('../../../utils/HTTP.js');
+const config = require('../../../config.js');
+var loadMoreView;
+const app = getApp()
 Page({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+
+  },
 
   /**
-   * 页面的初始数据
+   * 组件的初始数据
    */
   data: {
+    show: false,//控制下拉列表的显示隐藏，false隐藏、true显示
+    index: 0,//选择的下拉列表下标
+    contractBasicList: [],
+    addflag: true,  //判断是否显示搜索框右侧部分
+    addimg: '/image/activity_add.png',
+    searchstr: '',
+    pagelist: config.config.pagelist,
+    pagesize: config.config.pagesize,
+    scrollHeight: 400,
+    bottom: false
+  },
+  onLoad() {
+    loadMoreView = this.selectComponent("#loadmoreview")
+    this.getData(this.data.searchstr);
+    var syst = config.config.systemInfo;
+    this.setData({
+      scrollHeight: syst.windowHeight,
+    })
+  },
+  getData(_where) {
+    var plist = this.data.pagelist;
+    var psize = this.data.pagesize;
+    var isClaim = 1
+    var _url = 'api/ContractBasic/GetPageList?pagelist=' + plist + '&pagesize=' + psize ;
+    if (_where && _where != null && _where != '')
+      _url += "&_where=" + _where;
+    _HTTP.Get({ url: _url, data: '' }).then(res => {
+      var items = this.data.contractBasicList
+      if (this.data.pagelist == 0) {
+        items = res.data.data;
+      }
+      else {
+        items = items.concat(res.data.data)
+      }
+      this.setData({
+        contractBasicList: items
+      })
+      loadMoreView.loadMoreComplete(res, psize);
+    }).catch(res => {
+      console.log(res.data);
+    });
+  },
+  // 点击下拉显示框
+  selectTap() {
+    this.setData({
+      show: !this.data.show,
+    });
+  },
+  // 点击下拉列表
+  optionTap(e) {
+    let Index = e.currentTarget.dataset.index; //获取点击的下拉列表的下标
+    this.setData({
+      index: Index,
+      show: !this.data.show
+    });
+  },
+  tap(e) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  // 搜索框右侧 事件
+  addhandle() {
+    console.log('触发搜索框右侧事件')
+    wx.navigateTo({
+      url: "/pages/ContractBasic/Add/Index",
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  //搜索框输入时触发
+  searchList(ev) {
+    let e = ev.detail;
+    this.setData({
+      searchstr: e.detail.value,
+      pagelist: 0,
+      contractBasicList: []
+    })
+    this.getData(this.data.searchstr)
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  //搜索回调
+  endsearchList(e) {
+    console.log('查询数据')
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  // 取消搜索
+  cancelsearch() {
+    this.setData({
+      searchstr: '',
+      pagelist: 0,
+    })
+    this.getData(this.data.searchstr);
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  //清空搜索框
+  activity_clear(e) {
+    let d = e.detail;
+    this.setData({
+      searchstr: '',
+      pagelist: 0,
+    })
+    this.getData(this.data.searchstr);
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  _onScrollToLower: function () {
+    loadMoreView.loadMore()
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  loadMoreListener: function (e) {
+    this.setData({
+      pagelist: this.data.pagelist + 1,
+    })
+    this.getData()
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  clickLoadMore: function (e) {
+    this.getData()
+  },
 })

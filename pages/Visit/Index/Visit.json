@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "SearchBox": "/Component/SearchBox/SearchBox"
+    "SearchBox": "/Component/SearchBox/SearchBox",
+    "loadmore": "/Component/LoadMore/index"
   }
 }

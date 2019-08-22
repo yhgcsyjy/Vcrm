@@ -24,7 +24,13 @@
     "pages/BusinessPay/Add/Index",
     "pages/ContractBasic/Add/Index",
     "pages/ContractBasic/Detail/Index",
-    "pages/ContractBasic/Index/Index"
+    "pages/ContractBasic/Index/Index",
+    "pages/VisitPlan/Index/Index",
+    "pages/VisitPlan/Detail/Index",
+    "pages/VisitPlan/Add/Index",
+    "pages/BlackList/Index/Index",
+    "pages/BlackList/Detail/Detail",
+    "pages/BlackList/Add/Add"
   ],
   "window": {
     "backgroundTextStyle": "light",

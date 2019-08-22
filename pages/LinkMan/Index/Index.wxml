@@ -5,7 +5,10 @@
     </SearchBox>
     </view>
 <view>
-  <block wx:for="{{linkManList}}" wx:key='{{item}}'>
-    <template is="LinkManComponent" data="{{...item}}"></template>
-  </block>
+ <scroll-view scroll-y style="height: {{scrollHeight}}px; margin-top: 10px;" bindscrolltolower='_onScrollToLower'>
+    <block wx:for="{{linkManList}}" wx:key='{{item}}'>
+      <template is="LinkManComponent" data="{{...item,linManUrl:linManUrl}}"></template>
+    </block>
+      <loadmore id="loadmoreview" bindloadMoreListener='loadMoreListener' bindclickLoadMore='clickLoadMore'></loadmore>
+    </scroll-view>
 </view>

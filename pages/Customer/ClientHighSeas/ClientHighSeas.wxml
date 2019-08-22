@@ -5,8 +5,11 @@
     </SearchBox>
     </view>
 <view>
-  <block wx:for="{{customerList}}" wx:key="{{item}}">
-    <template is="Template" data="{{...item}}"></template>
-  </block>
+  <scroll-view scroll-y style="height: {{scrollHeight}}px; margin-top: 10px;" bindscrolltolower='_onScrollToLower'>
+    <block wx:for="{{customerList}}" wx:key="{{item}}">
+      <template is="Template" data="{{...item}}"></template>
+    </block>
+    <loadmore id="loadmoreview" bindloadMoreListener='loadMoreListener' bindclickLoadMore='clickLoadMore'></loadmore>
+    </scroll-view>
 </view>
    
