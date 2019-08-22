@@ -30,7 +30,14 @@
     "pages/VisitPlan/Add/Index",
     "pages/BlackList/Index/Index",
     "pages/BlackList/Detail/Detail",
-    "pages/BlackList/Add/Add"
+    "pages/BlackList/Add/Add",
+    "pages/WorkReport/Index/index",
+    "pages/WorkReport/Add/index",
+    "pages/CostRelease/Index/index",
+    "pages/CostRelease/Add/index",
+    "pages/CostRelease/Release/Release",
+    "pages/InquiryPrice/Index/index",
+    "pages/VisitCheckIn/Index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -28,7 +28,7 @@ const config = {
   jscode2sessionModel:"",
   systemInfo:"",
   pagelist: 1,
-  pagesize: 4,
+  pagesize: 6,
 }
 
 export {config}

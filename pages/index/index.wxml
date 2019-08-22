@@ -9,7 +9,7 @@
           <view wx:if="{{item.enabled}}" class='mask'>
             <text>{{item.detail}}</text>
           </view>
-          <view class='navigator' data-path='{{item.url}}' data-isBind='{{item.isBind}}' bindtap='bindNavigator'  hover-class="none">
+          <view class='navigator' data-path='{{item.url}}' data-isBind='{{item.isBind}}' bindtap='bindNavigator' hover-class="none">
             <view class='item-content'>
               <view class="item-content-icon">
                 <image src="{{item.icon}}" mode="scaleToFill" />
@@ -20,5 +20,14 @@
         </view>
       </block>
     </view>
+  </view>
+
+  <view class="grid">
+    <view class='grid-title'>
+      <text>营销动态</text>
+    </view>
+   <view class="containerView">
+      <ff-canvas id="guage-dom" canvas-id="guage" opts="{{ opts }}"></ff-canvas>
+   </view>
   </view>
 </view>
